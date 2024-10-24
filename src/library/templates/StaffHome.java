@@ -138,20 +138,7 @@ public class StaffHome extends JFrame {
 		// Load staff data into the table
 		loadMemberData();
 		/* ======================================= */
-//		JButton addBookbtn = new JButton("Add Books");
-//		addBookbtn.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				int response = JOptionPane.showConfirmDialog(null, "Do you want to update the staff details?",
-//						"Confirm Update", JOptionPane.YES_NO_OPTION);
-//
-//				// If the user clicks 'Yes', proceed to update
-//				if (response == JOptionPane.YES_OPTION) {
-//					new Login().setVisible(true);
-//				}
-//			}
-//		});
-		
-		
+
 		JScrollPane scrollPane1 = new JScrollPane();
 		scrollPane1.setSize(new Dimension(200, 200));
 		scrollPane1.setMaximumSize(new Dimension(200, 200));

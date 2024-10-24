@@ -138,7 +138,6 @@ public class ReportsHome extends JFrame {
 		// Optional: Set focus traversal policy if needed
 		scrollPane.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[] { table }));
 
-		// Load staff data into the table
 
 		/* ======================================= */
 
@@ -181,9 +180,6 @@ public class ReportsHome extends JFrame {
 
 		// Optional: Set focus traversal policy if needed
 		scrollPane1.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[] { table1 }));
-
-		// Load staff data into the table
-		// loadBookData();
 
 		/* ========================================================================= */
 
@@ -581,19 +577,6 @@ public class ReportsHome extends JFrame {
 		}
 
 	}
-
-//	private void csvForMember() {
-//		
-//	}
-//	
-//	private void csvForDateRange() {
-//		
-//	}
-//	
-//	private void csvForBookDetails() {
-//		
-//	}
-//	
 
 	private void exportTableDataToCSV(JTable table, String fileName) {
 

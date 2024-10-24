@@ -3,6 +3,7 @@ package library.templates;
 import java.awt.EventQueue;
 
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -28,7 +29,7 @@ public class updateStaff extends JFrame {
 	private JPanel contentPane;
 	private JTextField nameField;
 	private JTextField contactField;
-	private JComboBox roleField;
+	private JComboBox<String> roleField;
 	private JButton addStaffButton;
 	private JButton btnClose;
 	private static int sid;
@@ -197,8 +198,7 @@ public class updateStaff extends JFrame {
 				Connection conn = DatabaseHelper.connect();
 
 				String sql = "update staff set name=?, contact=?, role=? where id=?";
-				// String sql = "INSERT INTO staff(name, contact, role) VALUES(?, ?, ?) where
-				// id=?";
+				
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 
 				pstmt.setString(1, name);

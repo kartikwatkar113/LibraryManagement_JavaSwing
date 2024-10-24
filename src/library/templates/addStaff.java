@@ -3,6 +3,7 @@ package library.templates;
 import java.awt.EventQueue;
 
 
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,7 +28,7 @@ public class addStaff extends JFrame {
 	private JPanel contentPane;
 	private JTextField nameField;
 	private JTextField contactField;
-	private JComboBox roleField;
+	private JComboBox<String> roleField;
 	private JButton addStaffButton;
 	private JButton btnClose;
 	private JLabel lblNewLabel;
