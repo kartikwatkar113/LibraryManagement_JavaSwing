@@ -134,23 +134,27 @@ public class addMember extends JFrame {
 					return;
 				}
 				Connection conn = DatabaseHelper.connect();
-				String sql1 = "select count(*) from members where barcode='?'";
+				String sql1 = "SELECT COUNT(*) FROM members WHERE barcode=?";
 				PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+				pstmt1.setString(1, barcode);
 				ResultSet rs = pstmt1.executeQuery();
-				if (rs.getInt(1) != 0) {
-					System.out.println();
-					barcode = UUID.randomUUID().toString().substring(0, 8);
+
+				if (rs.next() && rs.getInt(1) != 0) { // Ensure cursor moves to the first row before fetching data
+				    barcode = UUID.randomUUID().toString().substring(0, 8);
 				}
+
 				String sql = "INSERT INTO members(name, contact, barcode) VALUES(?, ?, ?)";
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, name);
 				pstmt.setString(2, contact);
 				pstmt.setString(3, barcode);
 				pstmt.executeUpdate();
+
 				JOptionPane.showMessageDialog(this, "Member added successfully!");
 				StaffHome.loadMemberData();
 				StaffHome.loadBookData();
 				setVisible(false);
+
 			} else {
 				JOptionPane.showMessageDialog(this, "Please Fillup the data!");
 			}
